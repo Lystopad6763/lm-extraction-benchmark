@@ -25,29 +25,29 @@
 ## Швидкий старт
 
 ```bash
-# 1. Створи venv і встанови залежності
+# 1. Створити venv і встанови залежності
 python -m venv venv
 .\venv\Scripts\Activate
 pip install openai anthropic requests python-dotenv
 
-# 2. Скопіюй .env.example як .env і встав свої ключі
+# 2. Скопіювати .env.example як .env і вставити свої ключі
 cp .env.example .env
 
-# 3. Запусти Ollama локально
+# 3. Запустити Ollama локально
 ollama serve
 ollama pull mistral neural-chat llama2 phi3
 
-# 4. Запусти агента
+# 4. Запустити агента
 python extraction_agent.py
 ```
 
 ## Ключові висновки
 
-Детально читай в [ANALYSIS.md](ANALYSIS.md). Коротко:
+Детально описані в [ANALYSIS.md](ANALYSIS.md). Коротко:
 
-- **Claude Haiku** — найкраща для критичних задач (3с latency, 0 галюцинацій на простих даних)
+- **Claude Haiku** — найкраща для більшості задач (3с latency, 0 галюцинацій на простих даних)
 - **neural-chat** — найкраща локальна (12/12 завдань, $0)
-- **phi3** — несподівано найгірша (0 валідних JSON на складних датасетах)
+- **phi3** — найгірша (0 валідних JSON на складних датасетах)
 - **llama2** — погано працює з українською (перекладає на англійську)
 - **Хмарні моделі вигадують роки** — Claude поставив 2024, GPT — 2023, замість поточного 2026
 
